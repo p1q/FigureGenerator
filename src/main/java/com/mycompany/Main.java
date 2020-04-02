@@ -5,20 +5,20 @@ import com.mycompany.model.Sphere;
 import com.mycompany.model.Square;
 import com.mycompany.model.Trapezoid;
 import com.mycompany.model.Triangle;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
         int randomFiguresNumber = new Random().nextInt(Figure.FIGURE_NUMBER_LIMIT);
         Figure[] randomFigures = new Figure[randomFiguresNumber];
-
-        for (int i = 0; i < randomFigures.length; i++) {
-            randomFigures[i] = generateRandomFigure();
-        }
+        Arrays.setAll(randomFigures, i -> generateRandomFigure());
 
         System.out.println("FIGURES' FULL LIST:");
         for (int i = 0; i < randomFigures.length; i++) {
+            System.out.println();
             System.out.printf("%d. %s%n", i + 1, randomFigures[i].toString());
+            randomFigures[i].draw();
         }
     }
 
@@ -42,9 +42,7 @@ public class Main {
             sideA = generateRandom.nextDouble() * Figure.FIGURE_SIZE_LIMIT;
             sideB = generateRandom.nextDouble() * Figure.FIGURE_SIZE_LIMIT;
             sideC = generateRandom.nextDouble() * Figure.FIGURE_SIZE_LIMIT;
-            if ((sideA + sideB > sideC)
-                    && (sideA + sideC > sideB)
-                    && (sideB + sideC > sideA)) {
+            if ((sideA + sideB > sideC) && (sideA + sideC > sideB) && (sideB + sideC > sideA)) {
                 return new Triangle(sideA, sideB, sideC);
             }
         }
