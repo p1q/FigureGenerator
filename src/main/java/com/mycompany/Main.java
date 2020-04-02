@@ -15,6 +15,11 @@ public class Main {
         for (int i = 0; i < randomFigures.length; i++) {
             randomFigures[i] = generateRandomFigure();
         }
+
+        System.out.println("FIGURES' FULL LIST:");
+        for (int i = 0; i < randomFigures.length; i++) {
+            System.out.printf("%d. %s%n", i + 1, randomFigures[i].toString());
+        }
     }
 
     private static Figure generateRandomFigure() {
@@ -57,9 +62,9 @@ public class Main {
             leftLeg = generateRandom.nextDouble() * Figure.FIGURE_SIZE_LIMIT;
             if (topBase > 0 && bottomBase > topBase && leftLeg > 0) {
                 double leftBottomAngle = generateRandom.nextDouble() * Trapezoid.LEFT_BOTTOM_ANGLE_LIMIT + 1;
-                double height = leftLeg * Math.sin(leftBottomAngle);
-                rightLeg = Math.sqrt(square(height))
-                        + square(bottomBase - leftLeg * Math.cos(leftBottomAngle));
+                double height = leftLeg * Math.sin(Math.toRadians(leftBottomAngle));
+                rightLeg = Math.sqrt(square(height)
+                        + square(bottomBase - leftLeg * Math.cos(Math.toRadians(leftBottomAngle))));
                 return new Trapezoid(bottomBase, topBase, leftLeg, rightLeg, height);
             }
         }

@@ -29,6 +29,7 @@ public class Square extends AbstractFigure {
 
     @Override
     public String toString() {
-        return String.format("Figure: SQUARE | Side: %s | Color: %s", side, getColor());
+        return String.format("Figure: SQUARE # Side: %.2f | Area: %.2f | Color: %s",
+                side, getArea(), getColor());
     }
 }

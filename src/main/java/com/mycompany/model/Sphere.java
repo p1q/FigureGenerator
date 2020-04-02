@@ -29,6 +29,7 @@ public class Sphere extends AbstractFigure {
 
     @Override
     public String toString() {
-        return String.format("Figure: SPHERE | Radius: %s | Color: %s", radius, getColor());
+        return String.format("Figure: SPHERE # Radius: %.2f | Area: %.2f | Color: %s",
+                radius, getArea(), getColor());
     }
 }

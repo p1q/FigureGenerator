@@ -51,7 +51,8 @@ public class Triangle extends AbstractFigure {
 
     @Override
     public String toString() {
-        return String.format("Figure: TRIANGLE | First Side: %s | Second Side: %s" +
-                " | Third Side: %s | Color: %s", sideA, sideB, sideC, getColor());
+        return String.format("Figure: TRIANGLE # First Side: %.2f | Second Side: %.2f" +
+                " | Third Side: %.2f | Area: %.2f | Color: %s",
+                sideA, sideB, sideC, getArea(), getColor());
     }
 }

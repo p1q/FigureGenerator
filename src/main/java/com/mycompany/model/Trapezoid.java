@@ -70,8 +70,8 @@ public class Trapezoid extends AbstractFigure {
 
     @Override
     public String toString() {
-        return String.format("Figure: TRAPEZOID | Bottom Base: %s | Top Base: %s" +
-                " | Left Leg: %s | Right Leg: %s | Height: %s | Color: %s",
-                bottomBase, topBase, leftLeg, rightLeg, height, getColor());
+        return String.format("Figure: TRAPEZOID # Bottom Base: %.2f | Top Base: %.2f" +
+                " | Left Leg: %.2f | Right Leg: %.2f | Height: %.2f | Area: %.2f | Color: %s",
+                bottomBase, topBase, leftLeg, rightLeg, height, getArea(), getColor());
     }
 }
