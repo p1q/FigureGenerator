@@ -3,15 +3,75 @@ package com.mycompany.model;
 import com.mycompany.AbstractFigure;
 
 public class Trapezoid extends AbstractFigure {
-    public void draw() {
+    public final static int LEFT_BOTTOM_ANGLE_LIMIT = 178;
 
+    private double bottomBase;
+    private double topBase;
+    private double leftLeg;
+    private double rightLeg;
+    private double height;
+
+    public Trapezoid(double bottomBase, double topBase, double leftLeg,
+                     double rightLeg, double height) {
+        this.bottomBase = bottomBase;
+        this.topBase = topBase;
+        this.leftLeg = leftLeg;
+        this.rightLeg = rightLeg;
+        this.height = height;
+    }
+
+    public double getBottomBase() {
+        return bottomBase;
+    }
+
+    public void setBottomBase(double bottomBase) {
+        this.bottomBase = bottomBase;
+    }
+
+    public double getTopBase() {
+        return topBase;
+    }
+
+    public void setTopBase(double topBase) {
+        this.topBase = topBase;
+    }
+
+    public double getLeftLeg() {
+        return leftLeg;
+    }
+
+    public void setLeftLeg(double leftLeg) {
+        this.leftLeg = leftLeg;
+    }
+
+    public double getRightLeg() {
+        return rightLeg;
+    }
+
+    public void setRightLeg(double rightLeg) {
+        this.rightLeg = rightLeg;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public void draw() {
+        System.out.println("I draw a TRAPEZOID.");
     }
 
     public double getArea() {
-        return 0;
+        return height * (bottomBase + topBase) / 2;
     }
 
-    public String getColor() {
-        return null;
+    @Override
+    public String toString() {
+        return String.format("Figure: TRAPEZOID | Bottom Base: %s | Top Base: %s" +
+                " | Left Leg: %s | Right Leg: %s | Height: %s | Color: %s",
+                bottomBase, topBase, leftLeg, rightLeg, height, getColor());
     }
 }

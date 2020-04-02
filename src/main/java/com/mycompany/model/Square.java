@@ -19,6 +19,7 @@ public class Square extends AbstractFigure {
 
     @Override
     public void draw() {
+        System.out.println("I draw a SQUARE.");
     }
 
     @Override
@@ -28,8 +29,6 @@ public class Square extends AbstractFigure {
 
     @Override
     public String toString() {
-        return "Square{" +
-                "side=" + side +
-                '}';
+        return String.format("Figure: SQUARE | Side: %s | Color: %s", side, getColor());
     }
 }

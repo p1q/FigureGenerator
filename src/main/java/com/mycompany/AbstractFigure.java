@@ -8,7 +8,7 @@ public abstract class AbstractFigure implements Figure {
 
     private String color;
 
-    public AbstractFigure() {
+    protected AbstractFigure() {
         this.color = getRandomColor();
     }
 
